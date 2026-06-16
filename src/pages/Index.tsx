@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Icon from '@/components/ui/icon';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -68,8 +69,8 @@ const Index = () => {
               ))}
             </nav>
             <div className="hidden md:flex items-center gap-3">
-              <Button variant="ghost" className="text-sm hover:bg-white/5">Войти</Button>
-              <Button className="bg-komi hover:bg-komi-glow text-background font-semibold rounded-xl">Начать</Button>
+              <Link to="/auth"><Button variant="ghost" className="text-sm hover:bg-white/5">Войти</Button></Link>
+              <Link to="/auth"><Button className="bg-komi hover:bg-komi-glow text-background font-semibold rounded-xl">Начать</Button></Link>
             </div>
             <button className="md:hidden text-foreground" onClick={() => setMenuOpen(!menuOpen)}>
               <Icon name={menuOpen ? 'X' : 'Menu'} size={22} />
@@ -80,7 +81,7 @@ const Index = () => {
               {nav.map((n) => (
                 <a key={n.href} href={n.href} onClick={() => setMenuOpen(false)} className="text-muted-foreground hover:text-foreground">{n.label}</a>
               ))}
-              <Button className="bg-komi hover:bg-komi-glow text-background font-semibold rounded-xl w-full">Начать</Button>
+              <Link to="/auth"><Button className="bg-komi hover:bg-komi-glow text-background font-semibold rounded-xl w-full">Начать</Button></Link>
             </div>
           )}
         </div>
@@ -102,10 +103,12 @@ const Index = () => {
               KOMPLEKTO заменяет Excel, WhatsApp, ручные закупки и поиск поставщиков. KOMI находит товары, сравнивает цены и оптимизирует бюджеты — за вас.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-komi hover:bg-komi-glow text-background font-semibold rounded-xl px-8 h-13 text-base komi-glow">
-                Запустить платформу
-                <Icon name="ArrowRight" size={18} className="ml-1" />
-              </Button>
+              <Link to="/auth">
+                <Button size="lg" className="bg-komi hover:bg-komi-glow text-background font-semibold rounded-xl px-8 h-13 text-base komi-glow">
+                  Запустить платформу
+                  <Icon name="ArrowRight" size={18} className="ml-1" />
+                </Button>
+              </Link>
               <Button size="lg" variant="outline" className="rounded-xl px-8 h-13 text-base border-white/15 bg-white/5 hover:bg-white/10">
                 <Icon name="Play" size={16} className="mr-1" />
                 Смотреть демо
@@ -179,10 +182,12 @@ const Index = () => {
                 <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
                   AI ассистент встроен в каждый модуль. Он находит товары, сравнивает поставщиков, генерирует спецификации, оптимизирует бюджеты и следит за рынком — пока вы создаёте проекты.
                 </p>
-                <Button size="lg" className="bg-komi hover:bg-komi-glow text-background font-semibold rounded-xl px-8">
-                  Попробовать KOMI
-                  <Icon name="Sparkles" size={16} className="ml-1" />
-                </Button>
+                <Link to="/auth">
+                  <Button size="lg" className="bg-komi hover:bg-komi-glow text-background font-semibold rounded-xl px-8">
+                    Попробовать KOMI
+                    <Icon name="Sparkles" size={16} className="ml-1" />
+                  </Button>
+                </Link>
               </div>
               <div className="grid sm:grid-cols-2 gap-4">
                 {komiFeatures.map((f, i) => (
@@ -243,9 +248,11 @@ const Index = () => {
                     </li>
                   ))}
                 </ul>
-                <Button className={`rounded-xl w-full font-semibold ${p.highlight ? 'bg-komi hover:bg-komi-glow text-background' : 'bg-white/10 hover:bg-white/15 text-foreground'}`}>
-                  {p.cta}
-                </Button>
+                <Link to="/auth" className="w-full">
+                  <Button className={`rounded-xl w-full font-semibold ${p.highlight ? 'bg-komi hover:bg-komi-glow text-background' : 'bg-white/10 hover:bg-white/15 text-foreground'}`}>
+                    {p.cta}
+                  </Button>
+                </Link>
               </div>
             ))}
           </div>
