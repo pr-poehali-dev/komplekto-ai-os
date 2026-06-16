@@ -1,0 +1,1 @@
+CREATE TABLE t_p96360387_komplekto_ai_os.kprojects (id SERIAL PRIMARY KEY, pname VARCHAR(255) NOT NULL);

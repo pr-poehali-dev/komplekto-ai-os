@@ -20,18 +20,6 @@ export type Supplier = {
   logo: string;
 };
 
-export type Project = {
-  id: string;
-  name: string;
-  type: string;
-  budget: number;
-  spent: number;
-  items: number;
-  status: 'В работе' | 'Планирование' | 'Завершён';
-  cover: string;
-  progress: number;
-};
-
 export const categories = ['Сантехника', 'Плитка', 'Освещение', 'Мебель', 'Отделка', 'Двери'];
 
 export const products: Product[] = [
@@ -51,13 +39,6 @@ export const suppliers: Supplier[] = [
   { id: 's3', name: 'LightHouse', rating: 4.9, delivery: 7, priceIndex: 105, orders: 540, logo: '💡' },
   { id: 's4', name: 'MebelLux', rating: 5.0, delivery: 21, priceIndex: 120, orders: 320, logo: '🛋️' },
   { id: 's5', name: 'DoorMaster', rating: 4.5, delivery: 14, priceIndex: 96, orders: 410, logo: '🚪' },
-];
-
-export const initialProjects: Project[] = [
-  { id: 'pr1', name: 'Пентхаус «Бадаевский»', type: 'Квартира · 240 м²', budget: 12000000, spent: 7400000, items: 86, status: 'В работе', cover: '🏙️', progress: 62 },
-  { id: 'pr2', name: 'Загородный дом в Жуковке', type: 'Дом · 480 м²', budget: 28000000, spent: 9100000, items: 142, status: 'В работе', cover: '🏡', progress: 33 },
-  { id: 'pr3', name: 'Офис KOMPLEKTO HQ', type: 'Офис · 600 м²', budget: 15000000, spent: 14200000, items: 210, status: 'Завершён', cover: '🏢', progress: 100 },
-  { id: 'pr4', name: 'Бутик-отель «Резиденция»', type: 'Отель · 1200 м²', budget: 65000000, spent: 0, items: 12, status: 'Планирование', cover: '🏨', progress: 4 },
 ];
 
 export const komiInsights = [
